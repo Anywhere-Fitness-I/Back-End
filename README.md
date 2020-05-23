@@ -1,6 +1,6 @@
 ##Still in progress
 Endpoints
-POST Register
+##POST Register
 /auth/register
 
 {
@@ -8,7 +8,7 @@ POST Register
 	"password": "pass",
 	"instructor": true
 }
-POST Login
+##POST Login
 /auth/login
 
 {
@@ -21,7 +21,7 @@ On Login and Register You Will Receive a Token (lasts a day)
   "instructor": "false"
   "token": "eyJhbGciOiJ3ODQ0MX0.6es5Q9hZJw5U8a5EyWucbMM60xRoGX5_U3kQQ5BVPH0"
 }
-GET Classes
+##GET Classes
 /classes
 
 [
@@ -82,10 +82,10 @@ GET Classes
         "instructor_id": 3
     }
 ]
-GET Classes by ID
+##GET Classes by ID
 /classes/:id
 
-GET Clients by Class ID
+##GET Clients by Class ID
 /classes/:id/list
 
 On Success Returns Array of Users
@@ -97,7 +97,7 @@ On Success Returns Array of Users
    
   }
 ]
-GET Classes by Instructor
+##GET Classes by Instructor
 /classes/instructor/:id
 
 [
@@ -130,10 +130,10 @@ GET Classes by Instructor
         "instructor_id": 1
     }
 ]
-GET Classes by Client
+##GET Classes by Client
 /classes/client/:id
 
-POST Class (required fields to post a class are: name, start time, schedule, location)
+##POST Class (required fields to post a class are: name, start time, schedule, location)
 /classes
 
 
@@ -143,7 +143,7 @@ POST Class (required fields to post a class are: name, start time, schedule, loc
 	"schedule" : "Tues & Thurs 3PM",
 	"location": "201 Baker St"
 }
-DELETE Class
+##DELETE Class
 /classes/:id
 
 Returns an Array of All Classes Remaining
@@ -158,7 +158,7 @@ On Failure
 {
   "message": "error removing class either not authorized or class does not exist"
 }
-DELETE Class By Instructor ID
+##DELETE Class By Instructor ID
 /:id/remove
 
 Send the Class You Want to Delete in the Body of the Request
