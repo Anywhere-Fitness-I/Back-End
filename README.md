@@ -35,36 +35,52 @@ description
 intensityLevel
 location
 maxClassSize
-(registeredAttendees should update 
-(you have option for image but its not required)
+(registeredAttendees is not required and should update by register count)
+(you have an option for image but its not required)
 ```
-Update Instructor class
+### Update Instructor class
 Allows an instructor to update a specific part of a class
-Make a PUT request to /api/instructor/class
+Make a PUT request to /api/instructor/class/:id
 Must include a valid token
-Include the field(s) you wish to update
+:id refers to the id created when you post a class or an existing class
+Include the field(s) you wish to update (just the ones you want to update 😉)
+```
+name
 type
-Delete Instructor class
+date
+startTime
+duration
+description
+intensityLevel
+location
+maxClassSize
+```
+### Delete Instructor class
 Allows an instructor to delete a class
 Make a DELETE request to /api/instructor/class/:id
 where :id is the id of the class to be deleted.
 Must include a valid token
-Client (Private)
+
+## Client 
 This set of endpoints is only accessible to users with a valid token's role set to client.
 Get all classes
 Allows clients view all the classes available.
 Make a GET request to /api/client/class
 Must include a valid token
-Get all reserved classes
+
+### Get all reserved classes
 Allows a client view all the classes they have reserved.
 Make a GET request to /api/client/reservations
 Must include a valid token
-Make a reservation
+
+### Make a reservation
 Make a POST request to /api/client/reservations
 Must include a valid token and the id of the class to be reserved
 Required fields in the req.body:
-classId
-Delete a reservation
+```
+id
+```
+### Delete a reservation
 Allows a client to remove a reserved class from their list
 Make a DELETE request to /api/client/reservations/:id
 where :id is the id of the reserved class to be removed.
