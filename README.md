@@ -86,4 +86,4 @@ Make a **DELETE** request to **/api/client/reservations/:id**
 where :id is the id of the reserved class to be removed.
 Must include a valid token
 
-##### Let me know if you have any questions 🙂
+#### Let me know if you have any questions 🙂
