@@ -26,7 +26,7 @@ Make a **POST** request to **/api/instructor/class**
 Must include a valid token
 Required fields in the req.body:
 ```
-
+name
 type
 date
 startTime
