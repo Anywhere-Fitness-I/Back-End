@@ -1,6 +1,6 @@
 ## Base URL
 ``` 
-https://anywhere-fit.herokuapp.com/
+https://anywhere-fit.herokuapp.com
 ```
 
 ## Endpoints
