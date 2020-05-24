@@ -15,7 +15,7 @@ password
 role  => either instructor or client
 ```
 Login existing User
-Make a POST request to /api/auth/login
+Make a **POST** request to **/api/auth/login**
 Required fields in the req.body:
 ```
 email
