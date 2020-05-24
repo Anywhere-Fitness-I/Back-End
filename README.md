@@ -35,7 +35,7 @@ description
 intensityLevel
 location
 maxClassSize
-(registeredAttendees is not required and should update by register count)
+(registeredAttendees is not required and should update when a client reserves a class)
 (you have an option for image but its not required)
 ```
 ### Update Instructor class
