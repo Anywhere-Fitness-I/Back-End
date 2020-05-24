@@ -26,7 +26,7 @@ Make a **POST** request to **/api/instructor/class**
 Must include a valid token
 Required fields in the req.body:
 ```
-name
+
 type
 date
 startTime
@@ -85,3 +85,5 @@ Allows a client to remove a reserved class from their list
 Make a **DELETE** request to **/api/client/reservations/:id**
 where :id is the id of the reserved class to be removed.
 Must include a valid token
+
+##### Let me know if you have any questions 🙂
