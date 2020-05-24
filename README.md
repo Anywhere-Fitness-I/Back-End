@@ -14,6 +14,13 @@ email
 password
 role  => either instructor or client
 ```
+Login existing User
+Make a POST request to /api/auth/login
+Required fields in the req.body:
+```
+email
+password
+```
 ## Instructor 
 This set of endpoints is only accessible to users with a valid token's role set to instructor
 Get Instructor classes
