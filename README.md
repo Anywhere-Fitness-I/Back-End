@@ -106,7 +106,7 @@ Allows an instructor to update a specific part of a class
 Make a **PUT** request to **/api/instructor/class/:id**
 Must include a valid token
 :id refers to the id created when you post a class or an existing class for that instructor.
-Include the field(s) you wish to update (just the ones you want to update 😉)
+Include the field(s) you wish to update ( just the ones you want to update )
 ```
 name
 type
