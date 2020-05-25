@@ -1,0 +1,76 @@
+const router = require("express").Router();
+const Users = require("../../helpers/dbModel");
+const v = require("../../helpers/variables");
+const { validateBody } = require("../../helpers/middleware");
+
+router.get("/class", async (req, res) => {
+  try {
+    const classes = await Users.findClass();
+    classes.forEach((classe) => {
+      classe.instructorName = classe.firstName + " " + classe.lastName;
+      delete classe.firstName;
+      delete classe.lastName;
+    });
+    res.status(200).json(classes);
+  } catch (error) {
+    res.status(500).json({ message: v.errorMessage, error: error.message });
+  }
+});
+
+router.get("/reservations", async (req, res) => {
+  try {
+    const classes = await Users.getreservations(req.decodedToken.subject);
+    // instructorName
+    classes.forEach((classe) => {
+      classe.instructor = classe.firstName + " " + classe.lastName;
+      delete classe.firstName;
+      delete classe.lastName;
+    });
+    res.status(200).json(classes);
+  } catch (error) {
+    res.status(500).json({ message: v.errorMessage, error: error.message });
+  }
+});
+
+router.post("/reservations", validateBody, async (req, res) => {
+  const id = req.body.classId;
+  try {
+    let { registeredAttendees, maxClassSize } = await Users.findClassBy({
+      id,
+    }).first();
+    if (registeredAttendees < maxClassSize) {
+      await Users.addReservation({
+        ...req.body,
+        userId: req.decodedToken.subject,
+      });
+      let changes = {
+        registeredAttendees: registeredAttendees + 1,
+      };
+      await Users.editClass(req.body.classId, changes);
+      res.status(201).json({ message: v.newEntry });
+    } else res.status(400).json({ message: v.limitReached });
+  } catch (error) {
+    res.status(500).json({ message: v.errorMessage, error: error.message });
+  }
+});
+
+router.delete("/reservations/:classId", async (req, res) => {
+  const id = req.params.classId;
+  try {
+    let { registeredAttendees } = await Users.findClassBy({ id }).first();
+    await Users.deleteReservation({
+      classId: req.params.classId,
+      userId: req.decodedToken.subject,
+    });
+    let changes = {
+      registeredAttendees:
+        registeredAttendees === 0 ? 0 : registeredAttendees - 1,
+    };
+    await Users.editClass(req.params.classId, changes);
+    res.status(200).json({ message: v.entryRemoved("reservation") });
+  } catch (error) {
+    res.status(500).json({ message: v.errorMessage, error: error.message });
+  }
+});
+
+module.exports = router;
