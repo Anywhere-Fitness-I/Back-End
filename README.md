@@ -41,6 +41,27 @@ Get Instructor classes
 Allows instructors view the classes they have created.
 Make a **GET** request to **/api/instructor/class**
 Must include a valid token
+example respones:
+(this will be an empty array if the instructor has not created a class!)
+```
+[
+    {
+        "id": 6,
+        "name": "meee",
+        "type": "alien",
+        "date": "today",
+        "startTime": "right now",
+        "duration": "forever",
+        "intensityLevel": "easy peasy",
+        "location": "planet earth",
+        "description": "best ever!",
+        "registeredAttendees": 0,
+        "maxClassSize": 50,
+        "image": null,
+        "instructorId": 4
+    }
+]
+```
 
 ### Add a new Instructor class
 Make a **POST** request to **/api/instructor/class**
