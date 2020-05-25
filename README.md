@@ -21,6 +21,20 @@ Required fields in the req.body:
 email
 password
 ```
+On a succesfull login/register you'll get a response like this:
+```
+{
+    "message": "Welcome testing!",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0Ijo5LCJyb2xlIjoiY2xpZW50IiwiaWF0IjoxNTkwMzcwMTg5LCJleHAiOjE1OTI5NjIxODl9.xMwyt7HIcTplwnNbyNp_TKNECK-0OJ_TRHXEoON6e-g",
+    "user": {
+        "id": 9,
+        "firstName": "testing",
+        "lastName": "testing",
+        "email": "client123@client.com",
+        "role": "client"
+    }
+}
+```
 ## Instructor 
 This set of endpoints is only accessible to users with a valid token's role set to instructor
 Get Instructor classes
