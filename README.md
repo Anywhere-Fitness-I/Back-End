@@ -59,6 +59,27 @@ maxClassSize
 (registeredAttendees is not required and should update when a client reserves a class)
 (you have an option for image but its not required)
 ```
+successful posting response example:
+```
+{
+    "message": "New entry successfully created!",
+    "newClass": {
+        "id": 6,
+        "name": "meee",
+        "type": "alien",
+        "date": "today",
+        "startTime": "right now",
+        "duration": "forever",
+        "intensityLevel": "easy peasy",
+        "location": "planet earth",
+        "description": "best class ever!",
+        "registeredAttendees": 0,
+        "maxClassSize": 50,
+        "image": null,
+        "instructorId": 4
+    }
+}
+```
 ### Update Instructor class
 Allows an instructor to update a specific part of a class
 Make a **PUT** request to **/api/instructor/class/:id**
