@@ -185,6 +185,27 @@ successful response will show an array of all available classes:
 Allows a client view all the classes they have reserved.
 Make a **GET** request to **/api/client/reservations**
 Must include a valid token
+example of successful get request:
+(this will be empty if user has no reseved classes)
+```
+[
+    {
+        "classId": 2,
+        "name": "Tai-Chi",
+        "type": "martial-art",
+        "date": "Saturday 11:00 AM",
+        "startTime": "06/20/2020",
+        "duration": "3 months",
+        "intensityLevel": "hard",
+        "location": "456 Parker Ave",
+        "registeredAttendees": 1,
+        "maxClassSize": 20,
+        "description": "Tai chi is an ancient Chinese tradition that, today, is practiced as a graceful form of exercise. It involves a series of movements performed in a slow, focused manner and accompanied by deep breathing.",
+        "instructor": "instructor2 test"
+        "image":"###"
+    }
+]
+```
 
 ### Make a reservation
 Make a **POST** request to **/api/client/reservations**
