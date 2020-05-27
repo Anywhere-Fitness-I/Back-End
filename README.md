@@ -212,7 +212,9 @@ Make a **POST** request to **/api/client/reservations**
 Must include a valid token and the id of the class to be reserved
 Required fields in the req.body:
 ```
-classId
+{
+"classId":"3" => this will add class with the id of 3 to the users reserved classes and update registeredAttendees for that class
+}
 ```
 ### Delete a reservation
 Allows a client to remove a reserved class from their list
