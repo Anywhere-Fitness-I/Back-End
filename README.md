@@ -130,6 +130,53 @@ Get all classes
 Allows clients view all the classes available.
 Make a **GET** request to **/api/client/class**
 Must include a valid token
+successful response will show an array of all available classes:
+```
+[
+    {
+        "id": 7,
+        "name": "testClass",
+        "type": "alien",
+        "date": "today",
+        "startTime": "right now",
+        "duration": "forever",
+        "intensityLevel": "easy peasy",
+        "location": "mars",
+        "registeredAttendees": 0,
+        "maxClassSize": 50,
+        "description": "best ever!",
+        "instructorName": "danial hadavi"
+    },
+    {
+        "id": 8,
+        "name": "testClass",
+        "type": "alien",
+        "date": "today",
+        "startTime": "right now",
+        "duration": "forever",
+        "intensityLevel": "easy peasy",
+        "location": "mars",
+        "registeredAttendees": 0,
+        "maxClassSize": 50,
+        "description": "best ever!",
+        "instructorName": "danial hadavi"
+    },
+    {
+        "id": 9,
+        "name": "testClass",
+        "type": "alien",
+        "date": "today",
+        "startTime": "right now",
+        "duration": "forever",
+        "intensityLevel": "easy peasy",
+        "location": "mars",
+        "registeredAttendees": 0,
+        "maxClassSize": 50,
+        "description": "best ever!",
+        "instructorName": "danial hadavi"
+    } 
+]
+```
 
 ### Get all reserved classes
 Allows a client view all the classes they have reserved.
