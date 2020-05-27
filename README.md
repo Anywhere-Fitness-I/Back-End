@@ -145,6 +145,7 @@ successful response will show an array of all available classes:
         "registeredAttendees": 0,
         "maxClassSize": 50,
         "description": "best ever!",
+        "image":"###",
         "instructorName": "danial hadavi"
     },
     {
@@ -159,6 +160,7 @@ successful response will show an array of all available classes:
         "registeredAttendees": 0,
         "maxClassSize": 50,
         "description": "best ever!",
+        "image":"###",
         "instructorName": "danial hadavi"
     },
     {
@@ -173,6 +175,7 @@ successful response will show an array of all available classes:
         "registeredAttendees": 0,
         "maxClassSize": 50,
         "description": "best ever!",
+        "image":"###",
         "instructorName": "danial hadavi"
     } 
 ]
